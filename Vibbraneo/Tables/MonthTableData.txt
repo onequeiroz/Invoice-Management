@@ -1,0 +1,98 @@
+﻿USE VIBBRANEO
+GO
+
+BEGIN TRAN
+
+	BEGIN TRY 
+
+		INSERT INTO MONTH_REF
+		(
+			 CD_MONTH_REF
+			,DE_MONTH_REF
+			,DT_ICLO
+			,TM_ICLO
+		)
+		VALUES
+		(
+			 '01'
+			,'Janeiro'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '02'
+			,'Fevereiro'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '03'
+			,'Março'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '04'
+			,'Abril'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '05'
+			,'Maio'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '06'
+			,'Junho'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '07'
+			,'Julho'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '08'
+			,'Agosto'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '09'
+			,'Setembro'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '10'
+			,'Outubro'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '11'
+			,'Novembro'
+			,GETDATE()
+			,GETDATE()
+		),
+		(
+			 '12'
+			,'Dezembro'
+			,GETDATE()
+			,GETDATE()
+		);
+
+	END TRY
+
+	BEGIN CATCH
+
+		ROLLBACK TRAN
+		SELECT ERROR_MESSAGE() AS ErrorMessage
+
+	END CATCH
+
+COMMIT TRAN
